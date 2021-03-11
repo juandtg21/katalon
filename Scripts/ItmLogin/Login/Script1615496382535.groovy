@@ -15,3 +15,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://siaweb.itm.edu.co/ClaveAlumnos.asp')
+
+WebUI.selectOptionByIndex(findTestObject('ItmLoginOR/Page_Sistema de Informacin Acadmico Estudiantes/select_CarnDocumento de Identidad'), 
+    1)
+
+WebUI.setText(findTestObject('ItmLoginOR/Page_Sistema de Informacin Acadmico Estudiantes/input_Gua para pago de matrcula_Documento'), 
+    '1036643582')
+
+WebUI.setText(findTestObject('ItmLoginOR/Page_Sistema de Informacin Acadmico Estudiantes/input_Clave_Clave'), 'joker316')
+
+WebUI.selectOptionByLabel(findTestObject('ItmLoginOR/Page_Sistema de Informacin Acadmico Estudiantes/year'), '2020-2', false)
+
+WebUI.click(findTestObject('ItmLoginOR/Page_Sistema de Informacin Acadmico Estudiantes/input_Perodo Acadmico_Ingresar'))
+
+WebUI.click(findTestObject('ItmLoginOR/Page_Sistema de Informacin Acadmico/a_Asignaturas Canceladas'))
+
+WebUI.verifyElementPresent(findTestObject('ItmLoginOR/Page_Asignaturas Canceladas - ITM/td_NO TIENE ASIGNATURAS CANCELADAS'), 
+    0)
+
+WebUI.closeBrowser()
+
